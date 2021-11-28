@@ -1,0 +1,91 @@
+[ anycolor ] : [ Hello from anycolor !  ]
+[ anycolor ] : [ -------------------
+[ Hello from anycolor ! ] 
+ ]
+[ anycolor ] : [ 
+
+-------------------
+[ Hello from anycolor ! ] 
+ ]
+[ anycolor ] : [ 
+
+-------------------
+[ Hello from anycolor ! ] 
+ ]
+[ anycolor ] : [ 
+
+-------------------
+[ Hello from anycolor ! ] 
+ ]
+[ anycolor ] : [ 
+
+Running unit tests...
+
+\-----./  
+
+ ]
+[ anycolor ] : [ Running unit tests for  color check functions and other functions ]
+[ anycolor ] : [ 
+
+-------------------
+[ Hello from anycolor ! ] 
+ ]
+[ anycolor ] : [ 
+
+Running unit tests...
+
+\-----./  
+
+ ]
+[ anycolor ] : [ Running unit tests for  color check functions and other functions ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsRGB......  TESTS  OK ! ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsHEX......  TESTS  OK ! ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsRGBA......  TESTS  OK ! ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsKivyRGBA......  TESTS  OK ! ]
+[ anycolor ] : [ 
+->/testing  rgb_to_hex function .... ]
+[ anycolor ] : [ [rgb_to_hex]  [ #ffffff ]..[  TEST  done ] ]
+[ anycolor ] : [ 
+->/testing  kivy_rgba_to_rgb function .... ]
+[ anycolor ] : [ [kivy_rgba_to_rgb]  [ (255, 255, 255) ]..[  TEST  done ] ]
+[ anycolor ] : [ 
+->/testing  kivy_rgba_to_rgba function .... ]
+[ anycolor ] : [ [kivy_rgba_to_rgba]  [ (255, 255, 255, 1) ]..[  TEST  done ] ]
+[ anycolor ] : [ ['rgba', 'kivy_rgba'] ]
+[ anycolor ] : [ 
+
+ Tests COMPLETE... 
+
+  :) 
+
+ ]
+[ anycolor ] : [ 
+
+-------------------
+[ Hello from anycolor ! ] 
+ ]
+[ anycolor ] : [ 
+
+-------------------
+[ Hello from anycolor ! ] 
+ ]
+[ anycolor ] : [ 
+
+Running unit tests...
+
+\-----./  
+
+ ]
+[ anycolor ] : [ Running unit tests for  color check functions and other functions ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsRGB......  TESTS  OK ! ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsHEX......  TESTS  OK ! ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsRGBA......  TESTS  OK ! ]
+[ anycolor ] : [ Testing   <class 'function'>  ColorIsKivyRGBA......  TESTS  OK ! ]
+[ anycolor ] : [ Running test for AllColrMode function... ]
+[ anycolor ] : [ 
+
+ Tests COMPLETE... 
+
+  :) 
+
+ ]

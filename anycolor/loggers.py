@@ -10,7 +10,7 @@ letingvictorkipkemboi@gmail.com
 import logging
 
 
-def MakeFileStreamLogger(name, file_path, stream_handler_level = logging.DEBUG,file_handler_level = logging.DEBUG,stream_handler_format = "%(asctime)s %(levelname)s : %(message)s" , file_handler_format = "%(asctime)s %(levelname)s : %(message)s"):
+def MakeFileStreamLogger(name, file_path, stream_handler_level = logging.DEBUG,file_handler_level = logging.DEBUG,stream_handler_format = "%(asctime)s: %(message)s" , file_handler_format = "%(asctime)s %(levelname)s : %(message)s"):
     logger = logging.getLogger( name )
     # create hanlers
     print('making handlers ....')
@@ -34,10 +34,10 @@ def MakeFileStreamLogger(name, file_path, stream_handler_level = logging.DEBUG,f
     logger.addHandler(file_handler)
     print('--------------------\nlogger done ! \n')
     return logger
-    
+
 applog = MakeFileStreamLogger(
     'AppLogger',
-    './data/applogs.txt',
+    'applogs.txt',
     stream_handler_format = '[ anycolor ] : [ %(message)s ]',
     file_handler_format =  '[ anycolor ] : [ %(message)s ]',
 

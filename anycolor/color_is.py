@@ -1,6 +1,17 @@
-from tools import *
-from constants import *
+from . tools import *
+from . constants import *
 
+
+'''
+author - leting victor kipkemboi
+github - victhepythonista
+
+this script has functions that check if a color value is
+within its required parameters ....
+
+they are quite self explanatory
+
+'''
 def ColorIsRGB(color_value):
     '''
     check if a color   is  rgb -

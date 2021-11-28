@@ -1,6 +1,7 @@
-from convertor import Convertor,AllColorModes
-from loggers import applog
-
+from .convertor import Convertor
+from .get_all import AllColorModes
+from .loggers import applog
+from .color_is import *
 
 '''
 script for testing the 'convertor.py' file
@@ -12,7 +13,7 @@ def TestOk(test_obj):
     except :
         # # TODO:  ahandle these errors
         raise
-    appog.warning(f'Testing   {type(test_obj)}  {name}......  TESTS  OK !')
+    applog.warning(f'Testing   {type(test_obj)}  {name}......  TESTS  OK !')
 
 
 
@@ -44,13 +45,21 @@ def ConvertorTests():
     }
 
     for test_name,result in tests.items():
-        applog.warning(f'\n->/testing  {test_name} function ....')
-        applog.warning(f'[{test_name}]  [ {result} ]..[  TEST  done ]')
-
-        #applog.warning(f'!!!!! {test_name} result -> {result} ....[  TEST  FAIL ]   !!!!')
+        print(f'\n->/testing  {test_name} function ....')
+        print(f'[{test_name}]  [ {result} ]..[  TEST  done ]')
 
 def AllColorModesTests():
-    applog.warning(AllColorModes((.3,.4,.5,.6)))
+    applog.warning('Running test for AllColrMode function...')
+    test_color =(.3,.4,.5,.6)
+    print(f'all color modes for {test_color}',AllColorModes(test_color))
+
+
+def RunUnitTests():
+    applog.warning('\n\nRunning unit tests...\n\n\-----./  \n\n')
+    ScriptTests()
+    ConvertorTests()
+    AllColorModesTests()
+    applog.warning("\n\n Tests COMPLETE... \n\n  :) \n\n")
 
 if __name__ == '__main__':
     applog.warning('\n\nRunning testss on convertor.py  ....  \n\n')
