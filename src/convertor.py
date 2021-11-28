@@ -37,11 +37,6 @@ def CheckAlpha(alpha):
             return alpha
     return 1
 
-class ColorValueError(Exception):
-    '''
-    raise when a wrong color value is provided
-    '''
-    pass
 
 def NumberCheck(num, maximum = 100, minimum = 0):
     '''
@@ -61,8 +56,8 @@ def ColorIsRGB(color_value):
     check if a color   is  rgb -
     # rtype : bool
     '''
-    if type(color_value) == tuple:
-        digit_check = lambda x:NumberCheck(x, 0, RGB_MAX)
+    if type(color_value) in [list,tuple]:
+        digit_check = lambda x:NumberCheck(x,RGB_MAX)
         check_list = map(digit_check, color_value)
         if all(check_list):
             # all numbers are withun rgb range
@@ -83,39 +78,17 @@ def ColorIsHEX(color_value):
             return True
     return False
 
-def ColorIsHSV(color_value):
-    '''
-
-    check if a color   is  HSV
-    '''
-    if type(color_value) == tuple :
-        if len(color_value) == 3:
-            h,s,v = color_value
-            if NumberCheck(h, 360) and NumberCheck(s, 100) and NumberCheck(v, 100):
-                return True
-    return False
-def ColorIsHSL(color_value):
-    '''
-
-    check if a color   is  HSV
-    '''
-    if type(color_value) == tuple :
-        if len(color_value) == 3:
-            h,s,l = color_value
-            if NumberCheck(h, 360) and NumberCheck(s, 100) and NumberCheck(v, 100):
-                return True
-    return False
-
 
 def ColorIsRGBA(color_value):
     '''
     check if color is in rgba format
     '''
     d_type = type(color_value)
-    if d_type == tuple:
+    if d_type in [list,tuple]:
         if len(color_value) == 4:
             # check rgb firrst
-            if all(list(map(NumberCheck, color_value[0:-1]))):
+            rgb_check = lambda x:NumberCheck(x,RGB_MAX)
+            if all(list(map(rgb_check, color_value[0:-1]))):
                 if NumberCheck(color_value[-1], 1):
                     # the alpha value is ok
                     return True
@@ -126,11 +99,12 @@ def ColorIsKivyRGBA(color_value):
     check if a color is in a correct
     kvrgba format
     '''
-    color_value = list(color_value) # much easier to work with lists
-    if len(color_value) == 4:
-        # next check if all values are less than one
-        if all([value < 1 for value in color_value] ):
-            return True
+    if type(color_value) in [list,tuple]:
+        color_value = list(color_value) # much easier to work with lists
+        if len(color_value) == 4:
+            # next check if all values are less than one
+            if all([NumberCheck(value,1) for value in color_value] ):
+                return True
     return False
 
 
@@ -147,16 +121,70 @@ def ColorIs(color_value, mode):
 	'hex':ColorIsHEX,
 	'rgb':ColorIsRGB,
 	'rgba':ColorIsRGBA,
-    'hsv':ColorIsHSV,
-    'hsl':ColorIsHSL,
+     'kivy_rgba':ColorIsKivyRGBA,
+
 
     }
     if mode in COLOR_IS_FUNCTIONS:
+        print('./ Searching for  color test function........')
         is_color_function = COLOR_IS_FUNCTIONS[mode]
+        print(f'color test function found -> {is_color_function.__name__}')
+        print('color value :',color_value)
         if is_color_function(color_value):
             return True
-        print(mode,' is not supported')
+        print('data_error or mode  is not supported')
         return False
+    print(f'-----\n\n!!{mode} is not supported or something....')
+
+
+
+
+def AllColorModes( anonymous_color):
+    # get all  Possible color modes of the given anonymous
+    data_type = type(anonymous_color)
+    color_modes_found = []
+    if data_type == str:
+        if anonymous_color.startswith('#'):
+            try:
+                if ColorIsHEX(anonymous_color):
+                    print(f'Anonymous color  {anonymous_color} is  in hexadecimal form')
+                    color_modes_found.append('hex')
+                    # what else to do !!??
+                else:
+                    print('color is not in hexadecimal form ...sadly :( ')
+            except TypeError:
+                print('Color is not in hexadecimal form')
+
+        else:
+            print('Definetely not in hexadecimal form ')
+    if data_type in [list,tuple]:
+        # :)
+
+        modes = ['rgb','rgba', 'kivy_rgba']
+        print(f"the color could be in {modes} modes ")
+        length =len(anonymous_color)
+        if  length == 3:
+            # check rgb ,hsl,hsv
+            for md in ['rgb']:
+                if ColorIs(anonymous_color,md):
+                    color_modes_found.append(md)
+                    continue
+                else:
+                    continue
+
+        elif length == 4:
+            # check kivy_rgba, or rgba
+            for md in ['rgba', 'kivy_rgba']:
+                if ColorIs(anonymous_color, md):
+                    color_modes_found.append(md)
+                    print(f'Anonymous color could be in [{md}]  form ')
+
+        else:
+            print('No color modes found :(')
+    return color_modes_found
+
+
+
 
 
 
@@ -246,7 +274,3 @@ class Convertor:
         }
 
         return res
-
-    def GetAll(self, anonymous_color):
-        # get all color modes of the given anonymous
-        pass

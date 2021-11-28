@@ -1,4 +1,4 @@
-from convertor import Convertor
+from convertor import Convertor,AllColorModes
 
 
 
@@ -48,10 +48,15 @@ def ConvertorTests():
         print(f'[{test_name}]  [ {result} ]..[  TEST  done ]')
 
         #print(f'!!!!! {test_name} result -> {result} ....[  TEST  FAIL ]   !!!!')
+
+def AllColorModesTests():
+    print(AllColorModes((.3,.4,.5,.6)))
+
 if __name__ == '__main__':
     print('\n\nRunning testss on convertor.py  ....  \n\n')
     #ScriptTests()
-    ConvertorTests()
+    #ConvertorTests()
+    AllColorModesTests()
     print("\n\n Tests COMPLETE... \n\n  :) \n\n")
 
 '''
