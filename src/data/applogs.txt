@@ -1,0 +1,17 @@
+[ anycolor ] : [ applog test 1,2 ]
+[ anycolor ] : [ applog test 1,2 ]
+[ anycolor ] : [ applog test 1,2 ]
+[ anycolor ] : [ 
+
+Running testss on convertor.py  ....  
+
+ ]
+[ anycolor ] : [ ['rgba', 'kivy_rgba'] ]
+[ anycolor ] : [ 
+
+ Tests COMPLETE... 
+
+  :) 
+
+ ]
+[ anycolor ] : [ applog test 1,2 ]

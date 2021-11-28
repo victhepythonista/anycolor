@@ -1,5 +1,5 @@
 from convertor import Convertor,AllColorModes
-
+from loggers import applog
 
 
 '''
@@ -12,7 +12,7 @@ def TestOk(test_obj):
     except :
         # # TODO:  ahandle these errors
         raise
-    print(f'Testing   {type(test_obj)}  {name}......  TESTS  OK !')
+    appog.warning(f'Testing   {type(test_obj)}  {name}......  TESTS  OK !')
 
 
 
@@ -23,7 +23,7 @@ white_rgb = 255,255,255
 white_hsv = 0,0,255
 #white_hsl =
 def ScriptTests():
-    print('Running unit tests for  color check functions and other functions')
+    applog.warning('Running unit tests for  color check functions and other functions')
     if ColorIsRGB(white_rgb) == True:TestOk(ColorIsRGB)
     if ColorIsHEX(white_hex) == True:TestOk(ColorIsHEX)
     if ColorIsRGBA(white_rgba) == True:TestOk(ColorIsRGBA)
@@ -44,20 +44,20 @@ def ConvertorTests():
     }
 
     for test_name,result in tests.items():
-        print(f'\n->/testing  {test_name} function ....')
-        print(f'[{test_name}]  [ {result} ]..[  TEST  done ]')
+        applog.warning(f'\n->/testing  {test_name} function ....')
+        applog.warning(f'[{test_name}]  [ {result} ]..[  TEST  done ]')
 
-        #print(f'!!!!! {test_name} result -> {result} ....[  TEST  FAIL ]   !!!!')
+        #applog.warning(f'!!!!! {test_name} result -> {result} ....[  TEST  FAIL ]   !!!!')
 
 def AllColorModesTests():
-    print(AllColorModes((.3,.4,.5,.6)))
+    applog.warning(AllColorModes((.3,.4,.5,.6)))
 
 if __name__ == '__main__':
-    print('\n\nRunning testss on convertor.py  ....  \n\n')
+    applog.warning('\n\nRunning testss on convertor.py  ....  \n\n')
     #ScriptTests()
     #ConvertorTests()
     AllColorModesTests()
-    print("\n\n Tests COMPLETE... \n\n  :) \n\n")
+    applog.warning("\n\n Tests COMPLETE... \n\n  :) \n\n")
 
 '''
 
