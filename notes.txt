@@ -1,0 +1,12 @@
+
+HSV
+----
+hue - (0-360)degrees
+saturation -  percentage
+value - percentage
+
+HSL
+---
+hue - (0-360)degrees
+saturation  - percentage
+lightness - percentage

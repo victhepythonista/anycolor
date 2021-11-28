@@ -1,0 +1,1 @@
+echo [ Anycolor ] : [ %1 ]
