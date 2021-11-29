@@ -31,7 +31,7 @@ def MakeFileStreamLogger(name, file_path, stream_handler_level = logging.DEBUG,f
     # add handlers
     print('adding handlers.....................')
     logger.addHandler(stream_handler)
-    logger.addHandler(file_handler)
+    #logger.addHandler(file_handler)
     print('--------------------\nlogger done ! \n')
     return logger
 

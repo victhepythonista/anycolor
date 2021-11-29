@@ -86,7 +86,16 @@ class Convertor:
         # convert to a tuple since that the needed format
         return rgba
 
+    #rgb/hsv
+    def rgb_to_hsv(self, rgb_value):
+        r,g,b = rgb_value
+        return RoundOffValues(colorsys.rgb_to_hsv(r,g,b))
+    def hsv_to_rgb(self, hsv_value):
+        h,s,v = rgb_value
+        return RoundOffValues(colorsys.hsv_to_rgb(r,g,b))
 
+
+    # kivy_rgb_to_all
     def kivy_rgba_to_all(self, kv_rgba_value):
         # convert a given color mode in kv_rgba  and convert it
         # to all other modes
@@ -108,6 +117,8 @@ class Convertor:
         }
 
         return res
+
+# TODO: anymode to all other modes
 
 
 

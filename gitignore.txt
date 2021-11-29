@@ -3,3 +3,4 @@ AppSays.bat
 ConvertorTests.bat
 notes.txt
 module_test.py
+RunModuleTests.bat
