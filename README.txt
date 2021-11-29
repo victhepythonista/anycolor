@@ -13,6 +13,6 @@ a simple python module for color conversion across 6 modes
 it has a  alot  commands  covering these functionality
 
 the main features are:
-    - color conversions
+    - color conversions across 5 modes 
     - scanning color percentages in images or a screen
     - converting a color/colors on an image to another color

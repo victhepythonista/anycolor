@@ -1,1 +1,1 @@
-import .unit_test
+from anycolor.test.unit_test import RunUnitTests

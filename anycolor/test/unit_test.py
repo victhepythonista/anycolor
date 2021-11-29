@@ -1,7 +1,7 @@
-from convertor import Convertor
-from get_all import AllColorModes
-from loggers import applog
-from color_is import *
+from anycolor import Convertor
+from anycolor import AllColorModes
+from anycolor.loggers import applog
+from anycolor.color_is import *
 
 '''
 script for testing the 'convertor.py' file
@@ -45,13 +45,21 @@ def ConvertorTests():
     }
 
     for test_name,result in tests.items():
-        print(f'\n->/testing  {test_name} function ....')
-        print(f'[{test_name}]  [ {result} ]..[  TEST  done ]')
+        if result:
+            applog.warning(f'test ok' )
+            print(test_name)
+        else:
+            applog.warning(f'Test Fail for ')
+            print(test_name)
+            continue
+        print(f'[{test_name}] [  TEST  done ]')
 
 def AllColorModesTests():
     applog.warning('Running test for AllColrMode function...')
     test_color =(.3,.4,.5,.6)
-    print(f'all color modes for {test_color}',AllColorModes(test_color))
+    applog.warning(f'all color modes for {test_color}')
+    # # BUG FIXED !!
+    print('TEST RESULT FOR ALL COLOR MODES :-->', AllColorModes(test_color))
 
 
 def RunUnitTests():
@@ -62,6 +70,7 @@ def RunUnitTests():
     applog.warning("\n\n Tests COMPLETE... \n\n  :) \n\n")
 
 if __name__ == '__main__':
+
     applog.warning('\n\nRunning testss on convertor.py  ....  \n\n')
     #ScriptTests()
     #ConvertorTests()
