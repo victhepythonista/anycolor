@@ -2,3 +2,4 @@ todos.txt
 AppSays.bat
 ConvertorTests.bat
 notes.txt
+module_test.py

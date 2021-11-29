@@ -1,7 +1,7 @@
-from .convertor import Convertor
-from .get_all import AllColorModes
-from .loggers import applog
-from .color_is import *
+from convertor import Convertor
+from get_all import AllColorModes
+from loggers import applog
+from color_is import *
 
 '''
 script for testing the 'convertor.py' file
