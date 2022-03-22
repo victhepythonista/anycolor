@@ -5,3 +5,4 @@ module_test.py
 RunModuleTests.bat
 applogs.txt
 batchscripts
+ignore.txt
