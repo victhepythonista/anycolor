@@ -20,6 +20,7 @@ setup(
     description = 'An easy to use color conversion library with many more features !!',
     long_description = open('README.txt').read(),
     install_requires = [],
+	licence_files = ("LICENSE.txt")
 
 
 )
